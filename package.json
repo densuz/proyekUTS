@@ -1,0 +1,35 @@
+{
+  "name": "proyekuts",
+  "version": "1.0.0",
+  "description": "Projek UTS deni susanto_201701019",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/densuz/proyekUTS.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodejs",
+    "jsonwebtoken"
+  ],
+  "author": "Deni Susanto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/densuz/proyekUTS/issues"
+  },
+  "homepage": "https://github.com/densuz/proyekUTS#readme"
+}
