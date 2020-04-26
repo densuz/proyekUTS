@@ -6,6 +6,16 @@ module.exports = function(app){
     app.route('/')
     .get(jsonku.index);
 
-    app.route('/tampil')
+    app.route('/tampilsparepart')
     .get(jsonku.tampildatasparepart);
+
+    app.route('/tampilmontir')
+    .get(jsonku.tampildatamontir);
+
+    app.route('/tampilsparepart/:id')
+    .get(jsonku.tampildatasparepartid);
+
+    app.route('/tampilmontir/:id')
+    .get(jsonku.tampildatamontirid);
+
 }
