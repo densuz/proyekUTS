@@ -3,6 +3,6 @@
 var response = require('./res');
 var connection = require('./koneksi');
 
-exports.index = function(req,res){
-    response.ok('APlikasi REST API berjalan',res)
+exports.index = function (req, res) {
+    response.ok("Aplikasi Rest API WORKING!", res)
 };
