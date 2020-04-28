@@ -121,10 +121,29 @@ exports.tambahdataservice = function (req, res) {
          });
  };
 
+ //menambahkan data service
+exports.tambahdataservice = function (req, res) {
+    var post = {
+     nama_montir: req.body.nama_montir,
+     harga_perjam: req.body.harga_perjam, 
+    }
+    var query = "INSERT INTO ?? SET ?";
+    var table = ["t_montir"];
+ 
+    query = mysql.format(query, table);
+     connection.query(query, post, function (error, rows) {
+             if (error) {
+                 console.log(error);
+             } else {
+                 response.ok("Berhasil Menambahkan Data", res)
+             }
+         });
+ };
+
 
 exports.halamanrahasia = function(req,res){
-    response.ok("Access Denied! Halaman ini hanya untuk user  dengan role 1 = Pelanggan",res);
+    response.ok("Access Denied! Halaman ini hanya untuk user  dengan role 2",res);
 }
-exports.halamanrahasia = function(req,res){
-    response.ok("Maaf,Halaman ini hanya untuk user  dengan role 2 = Admin",res);
+exports.halamanrahasia1 = function(req,res){
+    response.ok("Maaf,Halaman ini hanya untuk user  dengan role 1 ",res);
 }
