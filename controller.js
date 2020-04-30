@@ -119,14 +119,13 @@ exports.tambahuser = function (req, res) {
     var level = req.body.level;
     var tanggal_daftar = new Date();
 
-
     connection.query('INSERT INTO t_user (username, email, password, level, tanggal_daftar) VALUES(?,?,?,?,?)',
         [username, email, password, level, tanggal_daftar],
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
             } else {
-                response.ok("Berhasil Menambahkan Data", res)
+                response.ok("Berhasil Menambahkan Data ke tabel t_User", res)
             }
         });
 };
@@ -199,3 +198,4 @@ exports.addsparepart = function (req, res) {
             }
         });
 };
+
