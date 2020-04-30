@@ -32,4 +32,7 @@ module.exports = function (app) {
 
     app.route('/addlevel')
         .post(jsonku.addlevel);
+
+     app.route('/addservice')
+        .post(jsonku.addservice);
 }
