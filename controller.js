@@ -310,4 +310,70 @@ exports.editservice = function (req, res) {
         });
 };
 
+//Delete data montir 
+exports.hapusMontir = function(req, res){
+    var id = req.body.id_montir;
 
+    connection.query('DELETE FROM t_montir WHERE id_montir=?', [id],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil Hapus Data di tabel t_montir", res)
+        }
+    });
+};
+
+//Delete data Sparepart 
+exports.deletesparepart = function(req, res){
+    var id = req.body.id_sparepart;
+    connection.query('DELETE FROM t_sparepart WHERE id_sparepart=?', [id],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil Hapus Data di tabel t_sparepart", res)
+        }
+    });
+};
+
+//Delete data User 
+exports.deleteuser = function(req, res){
+    var id = req.body.id_user;
+    connection.query('DELETE FROM t_user WHERE id_user=?', [id],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil Hapus Data di tabel t_user", res)
+        }
+    });
+};
+
+//Delete data Level
+exports.deletelevel = function(req, res){
+    var id = req.body.id_level;
+
+    connection.query('DELETE FROM t_level WHERE id_level=?', [id],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil Hapus Data di tabel t_level", res)
+        }
+    });
+};
+
+//Delete data service
+exports.deleteservice = function(req, res){
+    var id = req.body.id_service;
+
+    connection.query('DELETE FROM t_service WHERE id_service=?', [id],
+    function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil Hapus Data di tabel t_service", res)
+        }
+    });
+};

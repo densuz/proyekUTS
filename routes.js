@@ -53,4 +53,19 @@ module.exports = function (app) {
         .put(jsonku.editservice);
 
 
+    //ROUTES UNTUK HAPUS
+    app.route('/hapusmontir')
+        .delete(jsonku.hapusMontir);
+
+    app.route('/deletesparepart')
+        .delete(jsonku.deletesparepart)
+
+    app.route('/deleteuser')
+        .delete(jsonku.deleteuser);
+
+    app.route('/deletelevel')
+        .delete(jsonku.deletelevel);
+
+    app.route('/deleteservice')
+        .delete(jsonku.deleteservice);
 }
