@@ -29,4 +29,7 @@ module.exports = function (app) {
 
     app.route('/addsparepart')
         .post(jsonku.addsparepart);
+
+    app.route('/addlevel')
+        .post(jsonku.addlevel);
 }
