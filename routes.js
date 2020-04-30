@@ -33,6 +33,24 @@ module.exports = function (app) {
     app.route('/addlevel')
         .post(jsonku.addlevel);
 
-     app.route('/addservice')
+    app.route('/addservice')
         .post(jsonku.addservice);
+
+    // ROUTES UNTUK EDIT
+    app.route('/editmontir')
+        .put(jsonku.editmontir);
+
+    app.route('/editsparepart')
+        .put(jsonku.editsparepart);
+
+    app.route('/edituser')
+        .put(jsonku.edituser);
+
+    app.route('/editlevel')
+        .put(jsonku.editlevel);
+
+    app.route('/editservice')
+        .put(jsonku.editservice);
+
+
 }

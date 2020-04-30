@@ -214,3 +214,100 @@ exports.addlevel = function (req, res) {
             }
         });
 };
+
+//edit Data montir berdasarkan id
+exports.editmontir = function (req, res) {
+    var id_montir = req.body.id_montir;
+    var nama_montir = req.body.nama_montir;
+    var harga_perjam = req.body.harga_perjam;
+
+    connection.query('UPDATE t_montir SET nama_montir=?, harga_perjam=? WHERE id_montir=?', [nama_montir, harga_perjam, id_montir],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data", res)
+            }
+        });
+};
+
+//edit data Sparepart
+exports.editsparepart = function (req, res) {
+    var id_sparepart = req.body.id_sparepart;
+    var nama_sparepart = req.body.nama_sparepart;
+    var harga_sparepart = req.body.harga_sparepart;
+    var satuan = req.body.satuan;
+    
+
+    connection.query('UPDATE t_sparepart SET nama_sparepart=?, harga_sparepart=?, satuan=? WHERE id_sparepart=?',
+     [nama_sparepart, harga_sparepart, satuan, id_sparepart],
+    function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Mengubah Data di tabel Sparepart", res)
+            }
+        });
+};
+
+//Edit data User
+exports.edituser = function (req, res) {
+    var id_user = req.body.id_user;
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var level = req.body.level;
+    var tanggal_daftar = new Date();
+    
+
+    connection.query('UPDATE t_user SET username=?, email=?, password=?, level=?, tanggal_daftar=? WHERE id_user=?',
+        [username, email, password, level, tanggal_daftar, id_user], 
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Mengubah Data di tabel user!", res)
+            }
+        });
+};
+
+//Edit data level
+exports.editlevel = function (req, res) {
+    var id_level = req.body.id_level;
+    var nama_level = req.body.nama_level;
+
+    connection.query('UPDATE t_level SET nama_level=? WHERE id_level=?',
+        [nama_level, id_level], 
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Mengubah Data di tabel level", res)
+            }
+        });
+};
+
+//menambahkan data service
+exports.editservice = function (req, res) {
+    var id_service = req.body.id_service;
+    var tgl_service = new Date();
+    var id_user = req.body.id_user;
+    var id_montir = req.body.id_montir;
+    var jumlah_sparepart = req.body.jumlah_sparepart;
+    var id_sparepart = req.body.id_sparepart;
+    var jam_service = req.body.jam_service;
+    var total_service = req.body.total_service;
+    
+
+    connection.query('UPDATE t_service SET tgl_service=?, id_user=?, id_montir=?, jumlah_sparepart=?, id_sparepart=?, jam_service=?, total_service=? WHERE id_service=?',
+        [tgl_service, id_user, id_montir, jumlah_sparepart, id_sparepart, jam_service,total_service, id_service], 
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Mengubah Data di tabel service", res)
+            }
+        });
+};
+
+
